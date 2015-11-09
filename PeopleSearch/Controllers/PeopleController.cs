@@ -12,7 +12,16 @@ namespace PeopleSearch.Controllers
 {
     public class PeopleController : Controller
     {
-        private PeopleSearchContext db = new PeopleSearchContext();
+        private IPeopleSearchContext db = new PeopleSearchContext();
+
+        public PeopleController()
+        {
+        }
+
+        public PeopleController(IPeopleSearchContext context)
+        {
+            db = context;
+        }
 
         // GET: People
         public ActionResult Index()
@@ -87,7 +96,8 @@ namespace PeopleSearch.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(person).State = EntityState.Modified;
+                //db.Entry(person).State = EntityState.Modified;
+                db.MarkAsModified(person);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

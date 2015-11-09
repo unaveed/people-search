@@ -158,6 +158,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\IPeopleSearchContext.cs" />
     <Compile Include="Models\PeopleSearchContext.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

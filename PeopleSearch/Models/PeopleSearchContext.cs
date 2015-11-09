@@ -6,21 +6,25 @@ using System.Web;
 
 namespace PeopleSearch.Models
 {
-    public class PeopleSearchContext : DbContext
+    public class PeopleSearchContext : DbContext, IPeopleSearchContext
     {
-        // You can add custom code to this file. Changes will not be overwritten.
-        // 
-        // If you want Entity Framework to drop and regenerate your database
-        // automatically whenever you change your model schema, please use data migrations.
-        // For more information refer to the documentation:
-        // http://msdn.microsoft.com/en-us/data/jj591621.aspx
     
         public PeopleSearchContext() : base("name=PeopleSearchContext")
         {
         }
 
-        public System.Data.Entity.DbSet<PeopleSearch.Models.Person> People { get; set; }
+        public DbSet<Person> People { get; set; }
 
-        public System.Data.Entity.DbSet<PeopleSearch.Models.Address> Addresses { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+
+        int IPeopleSearchContext.SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IPeopleSearchContext.MarkAsModified(Person person)
+        {
+            Entry(person).State = EntityState.Modified;
+        }
     }
 }
