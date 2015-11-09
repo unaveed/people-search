@@ -148,6 +148,14 @@
     <Compile Include="Migrations\201511080232058_PSearch.Designer.cs">
       <DependentUpon>201511080232058_PSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511082140492_newpersonfieds.cs" />
+    <Compile Include="Migrations\201511082140492_newpersonfieds.Designer.cs">
+      <DependentUpon>201511082140492_newpersonfieds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511082232185_updatePersonFields.cs" />
+    <Compile Include="Migrations\201511082232185_updatePersonFields.Designer.cs">
+      <DependentUpon>201511082232185_updatePersonFields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\PeopleSearchContext.cs" />
@@ -161,10 +169,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\People\Create.cshtml" />
     <Content Include="Views\People\Delete.cshtml" />
-    <Content Include="Views\People\Details.cshtml" />
     <Content Include="Views\People\Edit.cshtml" />
     <Content Include="Views\People\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\People\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -178,6 +186,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201511080232058_PSearch.resx">
       <DependentUpon>201511080232058_PSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511082140492_newpersonfieds.resx">
+      <DependentUpon>201511082140492_newpersonfieds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511082232185_updatePersonFields.resx">
+      <DependentUpon>201511082232185_updatePersonFields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

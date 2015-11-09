@@ -22,8 +22,11 @@ else
          </div>
         <div>
             <p class="tb-subtitle">
-                <label>DOB - </label>
-            @Html.DisplayFor(modelItem => item.DOB.Month)/@Html.DisplayFor(modelItem => item.DOB.Day)/@Html.DisplayFor(modelItem => item.DOB.Year)
+                <label>Age - </label>
+                @{ 
+                    var age = DateTime.UtcNow.Year - item.DOB.Year;
+                    @Html.DisplayFor(modelItem => age)
+                }
             </p>
             <p class="tb-subtitle">
                 <label>Address - </label>
@@ -31,6 +34,10 @@ else
                @Html.DisplayFor(modelItem => item.Addr.City),
             @Html.DisplayFor(modelItem => item.Addr.State)
             @Html.DisplayFor(modelItem => item.Addr.Zip)
+            </p>
+            <p class="tb-subtitle">
+                <label>Interests - </label>
+                @Html.DisplayFor(modelItem => item.Interests)
             </p>
             <div style="text-align:center">
                 @Html.ActionLink("Edit", "Edit", new { id = item.PersonId }) |

@@ -49,7 +49,7 @@ namespace PeopleSearch.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PersonId,AddressId,FirstName,LastName,DOB,Picture")] Person person)
+        public ActionResult Create([Bind(Include = "PersonId,AddressId,FirstName,LastName,DOB,Picture,Interests,Phone,Email,Income,Employer")] Person person)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace PeopleSearch.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PersonId,AddressId,FirstName,LastName,DOB,Picture")] Person person)
+        public ActionResult Edit([Bind(Include = "PersonId,AddressId,FirstName,LastName,DOB,Picture,Interests,Phone,Email,Income,Employer")] Person person)
         {
             if (ModelState.IsValid)
             {
